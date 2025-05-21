@@ -1,0 +1,10 @@
+Type,Residue,Distance,Details
+HydrogenBond,877ASN,2.71,O2->O3
+HydrogenBond,879SER,3.83,O3->Nam
+HydrogenBond,879SER,3.84,O3->O3
+HydrogenBond,1077THR,3.68,O3->O3
+HydrogenBond,1132TRP,3.72,O3->Nar
+Hydrophobic,1132TRP,3.34,
+Hydrophobic,1139ARG,3.83,
+Hydrophobic,1141VAL,3.73,
+Hydrophobic,1138ALA,3.18,

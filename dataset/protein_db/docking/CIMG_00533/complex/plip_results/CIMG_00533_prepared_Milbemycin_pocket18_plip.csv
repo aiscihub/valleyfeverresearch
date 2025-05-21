@@ -1,0 +1,14 @@
+Type,Residue,Distance,Details
+HydrogenBond,238GLU,3.1,O-->O3
+HydrogenBond,998ASN,3.39,O3->Nam
+HydrogenBond,361TYR,3.63,O3->O3
+HydrogenBond,190GLY,3.37,O3->Nam
+HydrogenBond,328ASN,3.0,O3->Nam
+Hydrophobic,189PRO,3.93,
+Hydrophobic,361TYR,3.82,
+Hydrophobic,361TYR,3.88,
+Hydrophobic,803GLU,3.85,
+Hydrophobic,805LEU,3.91,
+Hydrophobic,998ASN,3.49,
+Hydrophobic,802ALA,3.43,
+Hydrophobic,803GLU,3.27,

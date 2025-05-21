@@ -1,0 +1,10 @@
+Type,Residue,Distance,Details
+HydrogenBond,895GLY,3.47,O2->O3
+HydrogenBond,900THR,3.1,O3->O3
+HydrogenBond,937GLN,3.23,O3->Nam
+HydrogenBond,1074GLY,4.0,O3->Nam
+HydrogenBond,900THR,3.1,O3->O3
+Hydrophobic,908ARG,3.4,
+Hydrophobic,874LEU,3.39,
+Hydrophobic,874LEU,3.87,
+Hydrophobic,911MET,3.63,

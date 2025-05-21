@@ -1,0 +1,10 @@
+Type,Residue,Distance,Details
+Hydrophobic,1279PRO,3.72,
+Hydrophobic,1464TRP,3.96,
+Hydrophobic,1278ILE,3.24,
+Hydrophobic,1278ILE,3.56,
+Hydrophobic,1278ILE,3.54,
+Hydrophobic,1464TRP,3.5,
+Hydrophobic,1467ILE,3.6,
+PiStacking,1464TRP,3.73,type=P
+PiStacking,1464TRP,3.76,type=P

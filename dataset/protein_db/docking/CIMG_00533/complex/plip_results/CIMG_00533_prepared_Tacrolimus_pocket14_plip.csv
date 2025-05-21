@@ -1,0 +1,11 @@
+Type,Residue,Distance,Details
+HydrogenBond,235TYR,3.5,O2->O3
+HydrogenBond,576LYS,3.25,O3->Nam
+HydrogenBond,577SER,3.13,O3->Nam
+HydrogenBond,241LYS,3.86,O3->N3+
+HydrogenBond,203GLU,3.62,O3->O3
+Hydrophobic,574LEU,3.83,
+Hydrophobic,235TYR,3.57,
+Hydrophobic,239ASP,2.98,
+Hydrophobic,241LYS,3.12,
+SaltBridge,241LYS,5.42,A↔Z

@@ -1,0 +1,9 @@
+Type,Residue,Distance,Details
+HydrogenBond,995GLU,3.86,O.co2->O3
+HydrogenBond,576LYS,3.12,O3->Nam
+Hydrophobic,237ALA,3.79,
+Hydrophobic,239ASP,3.69,
+Hydrophobic,574LEU,3.75,
+Hydrophobic,587PRO,3.64,
+Hydrophobic,799LEU,3.69,
+Hydrophobic,993PRO,3.9,

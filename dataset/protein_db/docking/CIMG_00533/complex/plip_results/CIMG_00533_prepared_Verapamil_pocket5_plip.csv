@@ -1,0 +1,7 @@
+Type,Residue,Distance,Details
+HydrogenBond,1223GLN,3.41,N1->Nam
+HydrogenBond,690GLN,3.2,O3->Nam
+Hydrophobic,545PHE,3.97,
+Hydrophobic,1219ILE,3.91,
+Hydrophobic,1397GLU,3.4,
+PiStacking,545PHE,3.66,type=P

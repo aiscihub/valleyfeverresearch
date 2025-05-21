@@ -1,0 +1,6 @@
+Type,Residue,Distance,Details
+HydrogenBond,1064GLN,3.25,O3->Nam
+HydrogenBond,405ARG,3.39,O3->Ng+
+Hydrophobic,403PRO,3.66,
+Hydrophobic,1063GLN,3.73,
+Hydrophobic,1063GLN,3.89,

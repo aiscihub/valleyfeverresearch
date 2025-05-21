@@ -1,0 +1,7 @@
+Type,Residue,Distance,Details
+HydrogenBond,308ARG,2.97,N1->Ng+
+HydrogenBond,308ARG,3.77,N3->Ng+
+Hydrophobic,309LYS,3.55,
+Hydrophobic,309LYS,3.7,
+SaltBridge,239ASP,5.31,A↔Z
+SaltBridge,298ASP,5.05,A↔Z

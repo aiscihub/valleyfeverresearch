@@ -1,0 +1,5 @@
+Type,Residue,Distance,Details
+HydrogenBond,124ARG,2.81,O3->Ng+
+HydrogenBond,124ARG,3.06,O3->Ng+
+Hydrophobic,116GLU,3.9,
+SaltBridge,124ARG,4.64,A↔Z

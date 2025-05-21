@@ -1,0 +1,11 @@
+Type,Residue,Distance,Details
+HydrogenBond,422ARG,3.64,O2->Ng+
+HydrogenBond,1034TRP,3.15,O2->Nar
+Hydrophobic,401PHE,3.69,
+Hydrophobic,403PRO,3.55,
+Hydrophobic,1034TRP,3.72,
+Hydrophobic,1060ILE,3.38,
+SaltBridge,422ARG,5.31,A↔Z
+SaltBridge,422ARG,5.26,A↔Z
+SaltBridge,422ARG,5.01,A↔Z
+PiStacking,401PHE,3.76,type=P

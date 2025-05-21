@@ -1,0 +1,15 @@
+Type,Residue,Distance,Details
+HydrogenBond,1182ARG,3.98,N3->Ng+
+HydrogenBond,953ARG,3.29,O3->Ng+
+Hydrophobic,946THR,3.46,
+Hydrophobic,950GLU,3.37,
+Hydrophobic,954PHE,2.94,
+Hydrophobic,957MET,3.9,
+Hydrophobic,1178TYR,3.34,
+Hydrophobic,1181ILE,3.91,
+Hydrophobic,1182ARG,3.51,
+Hydrophobic,951ALA,3.08,
+Hydrophobic,953ARG,3.88,
+Hydrophobic,954PHE,3.25,
+Hydrophobic,954PHE,2.91,
+SaltBridge,950GLU,4.79,A↔Z

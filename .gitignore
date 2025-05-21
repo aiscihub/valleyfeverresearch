@@ -1,0 +1,41 @@
+# macOS system files
+.DS_Store
+._*
+*.DS_Store*
+*.AppleDouble
+.Spotlight-V100
+.Trashes
+*.pdb
+*prankweb*
+
+# IDE and editor-specific
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Python-related cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# Docking output
+*.pdbqt
+*~  # backup/temporary files
+
+# Auto-saved or swap files
+*.swp
+*.tmp
+*.bak
+*.log
+
+# Ignore figures and images
+*.png
+*.jpg
+*.svg
+
+# Study-specific/generated data
+*study_case*
+*docking_dynamic*

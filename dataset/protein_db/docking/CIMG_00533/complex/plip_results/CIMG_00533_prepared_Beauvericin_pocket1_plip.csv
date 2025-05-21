@@ -1,0 +1,7 @@
+Type,Residue,Distance,Details
+Hydrophobic,109ARG,3.7,
+Hydrophobic,112MET,3.6,
+Hydrophobic,122ARG,3.82,
+Hydrophobic,351VAL,3.4,
+SaltBridge,124ARG,5.26,A↔Z
+SaltBridge,124ARG,4.71,A↔Z

@@ -1,0 +1,14 @@
+Type,Residue,Distance,Details
+HydrogenBond,1237SER,2.79,N1->O3
+HydrogenBond,1241GLN,3.07,N1->Nam
+HydrogenBond,523GLN,3.18,O3->Nam
+Hydrophobic,556LEU,3.63,
+Hydrophobic,563ILE,3.98,
+Hydrophobic,564THR,3.53,
+Hydrophobic,678ILE,2.95,
+Hydrophobic,678ILE,3.42,
+Hydrophobic,1345PHE,3.68,
+Hydrophobic,563ILE,3.38,
+Hydrophobic,1234THR,3.2,
+Hydrophobic,1342THR,3.28,
+Hydrophobic,1349LEU,3.47,

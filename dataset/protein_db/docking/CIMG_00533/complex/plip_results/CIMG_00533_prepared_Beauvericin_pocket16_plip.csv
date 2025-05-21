@@ -1,0 +1,10 @@
+Type,Residue,Distance,Details
+HydrogenBond,939GLN,2.8,O2->Nam
+Hydrophobic,309LYS,3.93,
+Hydrophobic,938GLN,3.52,
+Hydrophobic,939GLN,3.68,
+Hydrophobic,899THR,2.44,
+Hydrophobic,938GLN,2.36,
+Hydrophobic,1055HIS,2.87,
+Hydrophobic,1056GLN,3.76,
+SaltBridge,1055HIS,5.23,A↔Z

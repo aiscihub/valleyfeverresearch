@@ -1,0 +1,16 @@
+Type,Residue,Distance,Details
+HydrogenBond,1086ASN,4.03,O3->Nam
+HydrogenBond,1064GLN,3.35,O3->Nam
+HydrogenBond,1042LYS,3.32,O3->N3+
+HydrogenBond,1034TRP,3.03,O2->Nar
+HydrogenBond,422ARG,2.85,O2->Ng+
+HydrogenBond,422ARG,3.27,O2->Ng+
+Hydrophobic,403PRO,3.71,
+Hydrophobic,1034TRP,3.9,
+Hydrophobic,1038THR,3.49,
+Hydrophobic,1060ILE,3.93,
+Hydrophobic,1060ILE,3.99,
+Hydrophobic,1060ILE,3.76,
+Hydrophobic,1060ILE,3.77,
+Hydrophobic,1063GLN,3.49,
+SaltBridge,422ARG,5.03,A↔Z

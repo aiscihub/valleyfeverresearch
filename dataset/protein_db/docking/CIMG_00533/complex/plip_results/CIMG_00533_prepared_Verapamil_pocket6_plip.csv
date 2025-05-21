@@ -1,0 +1,8 @@
+Type,Residue,Distance,Details
+HydrogenBond,569ARG,3.41,O3->Ng+
+HydrogenBond,569ARG,3.14,O3->Ng+
+HydrogenBond,1334ALA,3.11,O3->Nam
+HydrogenBond,1335GLU,3.17,O3->Nam
+Hydrophobic,243PHE,3.52,
+Hydrophobic,299TYR,3.84,
+PiStacking,299TYR,5.0,type=T

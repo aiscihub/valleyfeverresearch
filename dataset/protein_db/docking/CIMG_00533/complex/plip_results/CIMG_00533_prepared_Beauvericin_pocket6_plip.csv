@@ -1,0 +1,7 @@
+Type,Residue,Distance,Details
+Hydrophobic,301ARG,3.86,
+Hydrophobic,513LYS,3.83,
+Hydrophobic,294LYS,3.77,
+Hydrophobic,514ALA,3.18,
+Hydrophobic,1332PRO,2.86,
+SaltBridge,294LYS,4.38,A↔Z

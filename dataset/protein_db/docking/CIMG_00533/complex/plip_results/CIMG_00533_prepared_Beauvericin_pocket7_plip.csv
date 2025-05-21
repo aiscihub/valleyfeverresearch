@@ -1,0 +1,12 @@
+Type,Residue,Distance,Details
+Hydrophobic,659THR,3.98,
+Hydrophobic,663ALA,3.54,
+Hydrophobic,673PHE,3.57,
+Hydrophobic,673PHE,3.53,
+Hydrophobic,700TRP,3.79,
+Hydrophobic,705ASN,3.95,
+Hydrophobic,787LEU,3.52,
+Hydrophobic,660LEU,3.69,
+Hydrophobic,664THR,3.9,
+Hydrophobic,681ILE,3.39,
+PiStacking,784PHE,5.22,type=T

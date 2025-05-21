@@ -1,0 +1,8 @@
+Type,Residue,Distance,Details
+HydrogenBond,860ASN,3.65,O2->Nam
+Hydrophobic,1132TRP,3.71,
+Hydrophobic,1138ALA,3.45,
+Hydrophobic,1139ARG,3.54,
+Hydrophobic,1142GLN,3.7,
+Hydrophobic,1142GLN,3.54,
+SaltBridge,859ARG,4.71,A↔Z

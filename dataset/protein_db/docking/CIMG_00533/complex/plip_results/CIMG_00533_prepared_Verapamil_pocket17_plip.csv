@@ -1,0 +1,8 @@
+Type,Residue,Distance,Details
+HydrogenBond,516THR,4.0,N1->O3
+HydrogenBond,569ARG,4.06,N1->Ng+
+HydrogenBond,508ARG,3.76,N3->Ng+
+Hydrophobic,300VAL,3.91,
+Hydrophobic,244PRO,3.9,
+Hydrophobic,508ARG,3.24,
+Hydrophobic,509ILE,3.26,

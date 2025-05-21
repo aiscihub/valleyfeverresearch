@@ -1,0 +1,7 @@
+Type,Residue,Distance,Details
+HydrogenBond,99LYS,3.8,O3->N3+
+HydrogenBond,276HIS,3.82,O3->Nar
+Hydrophobic,58ASN,3.99,
+Hydrophobic,90ILE,3.88,
+Hydrophobic,65LEU,3.12,
+Hydrophobic,95LEU,3.54,

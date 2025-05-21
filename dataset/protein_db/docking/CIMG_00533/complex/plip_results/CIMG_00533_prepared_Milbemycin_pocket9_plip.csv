@@ -1,0 +1,9 @@
+Type,Residue,Distance,Details
+HydrogenBond,803GLU,3.7,O3->O3
+HydrogenBond,239ASP,4.05,O3->Nam
+Hydrophobic,237ALA,3.13,
+Hydrophobic,590ALA,3.88,
+Hydrophobic,591LYS,3.92,
+Hydrophobic,993PRO,3.93,
+Hydrophobic,238GLU,3.79,
+SaltBridge,198LYS,3.78,A↔Z

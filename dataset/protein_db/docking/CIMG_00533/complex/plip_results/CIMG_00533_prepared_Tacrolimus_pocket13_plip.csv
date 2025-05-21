@@ -1,0 +1,9 @@
+Type,Residue,Distance,Details
+Hydrophobic,816LEU,3.63,
+Hydrophobic,981ASN,3.72,
+Hydrophobic,985PHE,3.85,
+Hydrophobic,1004LEU,3.46,
+Hydrophobic,189PRO,2.78,
+Hydrophobic,805LEU,3.31,
+Hydrophobic,984ASP,3.63,
+SaltBridge,188ARG,3.98,A↔Z

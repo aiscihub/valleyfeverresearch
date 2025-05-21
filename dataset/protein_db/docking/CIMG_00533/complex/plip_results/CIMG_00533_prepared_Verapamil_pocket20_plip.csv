@@ -1,0 +1,10 @@
+Type,Residue,Distance,Details
+HydrogenBond,1132TRP,3.55,N3->Nar
+HydrogenBond,1142GLN,3.72,N3->Nam
+HydrogenBond,859ARG,3.87,O3->Ng+
+Hydrophobic,877ASN,3.42,
+Hydrophobic,1139ARG,3.79,
+Hydrophobic,1142GLN,3.72,
+Hydrophobic,1142GLN,3.77,
+Hydrophobic,1138ALA,3.57,
+Hydrophobic,1139ARG,3.71,

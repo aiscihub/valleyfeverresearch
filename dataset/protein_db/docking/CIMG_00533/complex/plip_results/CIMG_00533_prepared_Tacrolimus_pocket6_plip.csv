@@ -1,0 +1,9 @@
+Type,Residue,Distance,Details
+HydrogenBond,294LYS,4.01,O2->N3+
+HydrogenBond,301ARG,4.03,O2->Nam
+HydrogenBond,512ASP,3.25,O3->O3
+Hydrophobic,301ARG,3.74,
+Hydrophobic,1333ASP,3.72,
+Hydrophobic,514ALA,3.59,
+SaltBridge,245HIS,5.35,A↔Z
+SaltBridge,294LYS,5.44,A↔Z

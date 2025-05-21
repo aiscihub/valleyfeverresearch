@@ -1,0 +1,16 @@
+Type,Residue,Distance,Details
+Hydrophobic,1371VAL,3.63,
+Hydrophobic,1371VAL,3.39,
+Hydrophobic,1373PRO,3.89,
+Hydrophobic,1469PHE,3.6,
+Hydrophobic,1469PHE,3.86,
+Hydrophobic,1469PHE,3.34,
+Hydrophobic,1469PHE,3.7,
+Hydrophobic,1477LEU,3.47,
+Hydrophobic,1477LEU,3.74,
+Hydrophobic,1509TRP,3.79,
+Hydrophobic,1469PHE,3.34,
+Hydrophobic,1473ALA,3.78,
+Hydrophobic,1476VAL,3.51,
+PiStacking,1466TYR,4.71,type=T
+PiStacking,1466TYR,4.99,type=T

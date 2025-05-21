@@ -1,0 +1,10 @@
+Type,Residue,Distance,Details
+HydrogenBond,285TYR,3.92,O3->O3
+HydrogenBond,122ARG,4.05,O3->Ng+
+HydrogenBond,122ARG,3.14,O3->Ng+
+Hydrophobic,104PHE,3.85,
+Hydrophobic,111PHE,3.97,
+Hydrophobic,261PRO,3.72,
+Hydrophobic,261PRO,3.75,
+Hydrophobic,277ILE,3.72,
+Hydrophobic,107TRP,3.6,

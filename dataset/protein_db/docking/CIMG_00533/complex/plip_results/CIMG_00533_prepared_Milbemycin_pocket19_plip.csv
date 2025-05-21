@@ -1,0 +1,10 @@
+Type,Residue,Distance,Details
+HydrogenBond,160TYR,3.47,O3->O3
+HydrogenBond,576LYS,2.85,O3->N3+
+HydrogenBond,164LYS,3.62,O3->N3+
+HydrogenBond,575TYR,3.3,O2->O3
+Hydrophobic,143TYR,3.8,
+Hydrophobic,150PRO,3.83,
+Hydrophobic,159GLU,3.94,
+Hydrophobic,160TYR,3.81,
+SaltBridge,576LYS,3.66,A↔Z

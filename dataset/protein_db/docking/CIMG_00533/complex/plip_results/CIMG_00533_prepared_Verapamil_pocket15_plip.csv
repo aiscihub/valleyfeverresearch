@@ -1,0 +1,15 @@
+Type,Residue,Distance,Details
+HydrogenBond,944GLU,2.77,N1->Nam
+HydrogenBond,944GLU,3.63,N1->O3
+HydrogenBond,945THR,4.04,N1->Nam
+HydrogenBond,1186GLN,3.86,N1->Nam
+Hydrophobic,299TYR,3.61,
+Hydrophobic,941LEU,3.93,
+Hydrophobic,941LEU,3.62,
+Hydrophobic,1249THR,3.44,
+Hydrophobic,1250GLN,3.7,
+Hydrophobic,1253LEU,2.99,
+Hydrophobic,1256VAL,3.58,
+Hydrophobic,943LEU,2.27,
+Hydrophobic,1250GLN,3.43,
+Hydrophobic,1253LEU,3.39,

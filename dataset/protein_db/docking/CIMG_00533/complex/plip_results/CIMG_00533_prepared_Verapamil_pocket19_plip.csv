@@ -1,0 +1,8 @@
+Type,Residue,Distance,Details
+HydrogenBond,800SER,3.94,N3->O3
+HydrogenBond,576LYS,3.32,O3->Nam
+HydrogenBond,577SER,3.79,O3->Nam
+Hydrophobic,574LEU,3.51,
+Hydrophobic,574LEU,3.77,
+Hydrophobic,798THR,3.97,
+Hydrophobic,587PRO,3.59,

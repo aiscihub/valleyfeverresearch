@@ -1,0 +1,13 @@
+Type,Residue,Distance,Details
+HydrogenBond,803GLU,2.93,O2->Nam
+HydrogenBond,999VAL,3.42,O2->Nam
+HydrogenBond,331ARG,3.74,O2->Ng+
+Hydrophobic,189PRO,3.91,
+Hydrophobic,803GLU,3.69,
+Hydrophobic,238GLU,2.84,
+Hydrophobic,801ALA,3.37,
+Hydrophobic,803GLU,2.95,
+Hydrophobic,993PRO,3.65,
+Hydrophobic,993PRO,3.66,
+Hydrophobic,999VAL,2.97,
+SaltBridge,198LYS,3.6,A↔Z

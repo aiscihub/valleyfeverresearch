@@ -1,0 +1,8 @@
+Type,Residue,Distance,Details
+HydrogenBond,863TYR,2.72,O3->O3
+HydrogenBond,900THR,3.09,O3->O3
+HydrogenBond,900THR,4.1,O2->O3
+Hydrophobic,867ILE,3.74,
+Hydrophobic,903ASP,3.71,
+Hydrophobic,909THR,3.64,
+Hydrophobic,874LEU,3.59,
