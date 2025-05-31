@@ -33,7 +33,7 @@ for ligand_name in selected_ligands:
     for complex_path in complex_files:
         print(f"{ligand_name}---{complex_path}---- {pocket_id}")
         prefix = os.path.basename(complex_path).replace("", "")
-        print(f"\n🚀 Running MD for: {prefix}, n_steps = {n_steps}")
+        print(f"\n Running MD for: {prefix}, n_steps = {n_steps}")
         ligand_name = os.path.basename(complex_path).replace(".pdb", "_aligned_ligand.sdf")
 
         # run_protein_ligand_md(
