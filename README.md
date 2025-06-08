@@ -9,6 +9,8 @@ druggable binding pockets that may mediate antifungal resistance.
 
 ---
 
+![Computational Pipeline](./system_arch.png)
+
 ## Pipeline Overview
 
 ```text
@@ -22,7 +24,7 @@ druggable binding pockets that may mediate antifungal resistance.
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 ```
 valleyfever/
 ├── dataset/
@@ -54,25 +56,25 @@ valleyfever/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-### 🔧 Docking Preparation
+### Docking Preparation
 ```bash
 python pipeline/docking/gen_docking_config.py
 bash run_all_docking_dynamic.sh
 ```
 
-### 📊 Process Docking Results
+### Process Docking Results
 ```bash
 python pipeline/docking/docking_result_process.py
 ```
 
-### 📈 Run Composite Scoring
+### Run Composite Scoring
 ```bash
 python pipeline/scoring/composite_score.py
 ```
 
-### 🧪 Run Molecular Dynamics
+###  Run Molecular Dynamics
 ```bash
 python pipeline/md/run_openmm_md.py \
   --base_dir /path/to/complex \
@@ -83,7 +85,7 @@ python pipeline/md/run_openmm_md.py \
 
 ---
 
-## 📚 Citation
+##  Citation
 If you use this pipeline, please cite:
 
 ```bibtex
@@ -97,7 +99,7 @@ If you use this pipeline, please cite:
 
 ---
 
-## 📦 Environment Setup
+##  Environment Setup
 ```bash
 conda create -n abc_pipeline python=3.10
 conda activate abc_pipeline
