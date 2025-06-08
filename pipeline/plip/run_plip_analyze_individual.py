@@ -4,11 +4,11 @@ import pandas as pd
 import os
 import glob
 
-# 🔧 Customize this path to the *top-level* protein folder you're working with
+# Customize this path to the *top-level* protein folder you're working with
 protein_folder = "CIMG_00533"
 base_path = f"/home/user/valleyfever/dataset/protein_db/md/{protein_folder}/simulation_explicit"
 
-# 📁 Output results folder
+# Output results folder
 output_dir = os.path.join(base_path, "plip_results")
 os.makedirs(output_dir, exist_ok=True)
 
@@ -16,7 +16,7 @@ summary_data = []
 pdb_files = glob.glob(f"{base_path}/**/*explicit_stripped*.pdb", recursive=True)
 
 
-# 🔁 Loop through all complex pdbs
+# Loop through all complex pdbs
 for filename in pdb_files:
     if "explicit_stripped" in filename and filename.endswith(".pdb"):
         complex_path = os.path.join(base_path, filename)
@@ -31,7 +31,7 @@ for filename in pdb_files:
             key = f"{lig.hetid}:{lig.chain}:{lig.position}"
             print(f"{key}")
             if key not in complex.interaction_sets:
-                print(f"⚠️ No interaction set found for: {key} in {filename}")
+                print(f"No interaction set found for: {key} in {filename}")
                 continue
 
             interactions = complex.interaction_sets[key]
@@ -59,18 +59,18 @@ for filename in pdb_files:
                     df = pd.DataFrame(rows, columns=["Type", "Residue", "Distance", "Details"])
                     out_path = os.path.join(output_dir, f"{complex_name}_plip.csv")
                     df.to_csv(out_path, index=False)
-                    print(f"✅ Saved: {out_path}")
+                    print(f"Saved: {out_path}")
 
                     for row in rows:
                         summary_data.append([complex_name] + row)
                 else:
-                    print(f"⚠️ No interactions found for {key} in {filename}")
+                    print(f"No interactions found for {key} in {filename}")
 
-            # 📦 Add to global summary
+            # Add to global summary
             for row in rows:
                 summary_data.append([complex_name] + row)
 
-# 💾 Write summary file
+# Write summary file
 summary_df = pd.DataFrame(summary_data, columns=["Complex", "Type", "Residue", "Distance", "Details"])
 summary_df.to_csv(os.path.join(output_dir, "all_plip_interactions_summary.csv"), index=False)
 print("🎉 PLIP profiling completed for:", protein_folder)

@@ -37,7 +37,7 @@ def align_full_ligand_to_pose(
         aligned_sdf = "Milbemycin_aligned.sdf",
         resname     = "UNL"
 ):
-    # --- Step 1: Extract docked pose from PDB ---
+    # Step 1: Extract docked pose from PDB
     with open(complex_pdb) as fh:
         lig_lines = [
             l for l in fh if l.startswith(("HETATM", "ATOM"))
@@ -50,7 +50,7 @@ def align_full_ligand_to_pose(
     pose = Chem.MolFromPDBBlock(pdb_block, sanitize=True, removeHs=True)
     print(f"Extracted {pose.GetNumAtoms()} atoms from docked pose")
 
-    # --- Step 2: Regenerate full ligand from correct SMILES ---
+    # Step 2: Regenerate full ligand from correct SMILES
     smiles = Chem.MolToSmiles(pose, isomericSmiles=True)
     full = Chem.MolFromSmiles(smiles)
     full = Chem.AddHs(full)
@@ -58,34 +58,34 @@ def align_full_ligand_to_pose(
     AllChem.UFFOptimizeMolecule(full)
     print("🛠️ Regenerated 3D conformer from pose SMILES")
 
-    # --- Step 3: Find heavy atom map ---
+    # Step 3: Find heavy atom map
     heavy_pose = Chem.RemoveHs(pose)
     heavy_full = Chem.RemoveHs(full)
     match = heavy_full.GetSubstructMatch(heavy_pose, useChirality=True)
     if not match:
         match = heavy_full.GetSubstructMatch(heavy_pose, useChirality=False)
     if not match:
-        raise RuntimeError("❌ Docked fragment not found in regenerated full ligand")
+        raise RuntimeError("Docked fragment not found in regenerated full ligand")
 
     hf_to_full = [i for i, a in enumerate(full.GetAtoms()) if a.GetAtomicNum() > 1]
     match_full = [hf_to_full[i] for i in match]
-    print(f"🔄 Mapping: {len(match_full)} atoms aligned")
+    print(f"Mapping: {len(match_full)} atoms aligned")
 
-    # --- Step 4: Align regenerated ligand to docked pose ---
+    # Step 4: Align regenerated ligand to docked pose
     rdMolAlign.AlignMol(full, pose, atomMap=list(zip(match_full, range(len(match_full)))))
 
-    # --- Step 5: Graft exact docked coordinates onto aligned full ligand ---
+    # Step 5: Graft exact docked coordinates onto aligned full ligand
     conf_full = full.GetConformer()
     conf_pose = pose.GetConformer()
     for f_idx, p_idx in zip(match_full, range(len(match_full))):
         conf_full.SetAtomPosition(f_idx, conf_pose.GetAtomPosition(p_idx))
 
-    # --- Step 6: Save final aligned ligand ---
+    # Step 6: Save final aligned ligand
     Chem.SDWriter(aligned_sdf).write(full)
-    print(f"✅ Aligned ligand saved ➜ {aligned_sdf}")
+    print(f"Aligned ligand saved ➜ {aligned_sdf}")
 
 
-# === Customize here ===
+# Customize here
 protein = "CIMG_00533"
 ligands = ["Verapamil", "Milbemycin", "Disulfiram", "Tacrolimus", "Beauvericin"]
 ligands = [ "Verapamil"]
@@ -96,7 +96,7 @@ pattern = re.compile(rf"^{protein}_prepared_[A-Za-z0-9]+_pocket\d+_complex\.pdb$
 base_path = f"/home/user/Projects/valleyfever/dataset/protein_db/md/{protein}/simulation_explicit/pocket3"
 outbase = f"/home/user/Projects/valleyfever/dataset/protein_db/md/{protein}/simulation_explicit/pocket3"
 
-# === Process each ligand
+# Process each ligand
 for ligand in ligands:
     docking_files = glob.glob(
         os.path.join(base_path, f"{protein}_prepared_{ligand}_pocket*_complex.pdb"),
@@ -106,7 +106,7 @@ for ligand in ligands:
     for file in docking_files:
         filename = os.path.basename(file)
         if pattern.match(filename):
-            print(f"🔍 Processing: {filename}")
+            print(f"Processing: {filename}")
 
             # Define output name
             base_name = filename.replace(".pdb", "")
@@ -114,7 +114,7 @@ for ligand in ligands:
             output_path = os.path.join(outbase, output_file)
 
             if os.path.exists(output_path):
-                print(f"✅ Skipped (already exists): {output_file}")
+                print(f"Skipped (already exists): {output_file}")
                 continue
 
             # Run PDBFixer
@@ -132,8 +132,8 @@ for ligand in ligands:
             with open(output_path, "w") as f:
                 PDBFile.writeFile(fixer.topology, fixer.positions, f)
 
-            print(f"✅ Saved: {output_file}")
+            print(f"Saved: {output_file}")
             ligand_pose_file = os.path.join(outbase, f"{base_name}_aligned_ligand.sdf")
 
             align_full_ligand_to_pose(complex_pdb=file, aligned_sdf = ligand_pose_file)
-            print(f"✅ Saved: {ligand_pose_file}")
+            print(f"Saved: {ligand_pose_file}")

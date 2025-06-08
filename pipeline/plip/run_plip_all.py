@@ -23,7 +23,7 @@ def run_plip_on_protein(protein_id, base_root):
             for lig in complex.ligands:
                 key = f"{lig.hetid}:{lig.chain}:{lig.position}"
                 if key not in complex.interaction_sets:
-                    print(f"⚠️ No interaction set found for: {key} in {filename}")
+                    print(f"No interaction set found for: {key} in {filename}")
                     continue
 
                 interactions = complex.interaction_sets[key]
@@ -51,21 +51,21 @@ def run_plip_on_protein(protein_id, base_root):
                     df = pd.DataFrame(rows, columns=["Type", "Residue", "Distance", "Details"])
                     out_path = os.path.join(output_dir, f"{complex_name}_plip.csv")
                    # df.to_csv(out_path, index=False)
-                   # print(f"✅ Saved: {out_path}")
+                   # print(f"Saved: {out_path}")
 
                     for row in rows:
                         summary_data.append([complex_name] + row)
                 else:
-                    print(f"⚠️ No interactions found for {key} in {filename}")
+                    print(f"No interactions found for {key} in {filename}")
 
     # Save summary for this protein
     summary_df = pd.DataFrame(summary_data, columns=["Complex", "Type", "Residue", "Distance", "Details"])
     summary_csv = os.path.join(output_dir, "all_plip_interactions_summary.csv")
     summary_df.to_csv(summary_csv, index=False)
-    print(f"📦 Summary saved to: {summary_csv}\n")
+    print(f"Summary saved to: {summary_csv}\n")
 
 
-# === Run on all proteins ===
+# Run on all proteins
 protein_list = ["CIMG_00533", "CIMG_00780", "CIMG_01418", "CIMG_06197", "CIMG_09093"]
 
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))

@@ -13,7 +13,7 @@ import os
 from pocket_util import grid_edge_from_sas, load_pdb_coords, \
     filter_tmd_domains, filter_nbd_domains, compute_domain_centers, min_dist
 
-# 📦 Root project folder is two levels up from this script
+# Root project folder is two levels up from this script
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 # Input Paths
@@ -76,10 +76,10 @@ def calculate_composite_score_updated(protein_id: str, master_df: pd.DataFrame) 
     # Parse ligand name if needed
     df_protein["Ligand"] = df_protein["Ligand"].apply(lambda x: x.split("_prepared_")[1])
 
-    # ❌ Remove invalid docking scores (e.g., 0.0 or > 0)
+    # Remove invalid docking scores (e.g., 0.0 or > 0)
     df_protein = df_protein[df_protein["DockingScore"] < 0.0]
 
-    # ✅ Only compute Z-score if enough data points remain
+    # Only compute Z-score if enough data points remain
     if df_protein.empty:
         raise ValueError(f"All docking scores for {protein_id} are invalid!")
 
@@ -94,7 +94,7 @@ def calculate_composite_score_updated(protein_id: str, master_df: pd.DataFrame) 
     excluded = master_df[
         (master_df["ProteinID"] == protein_id) & (master_df["DockingScore"] >= 0.0)
         ]
-    print(f"⚠️ Excluded {len(excluded)} bad docking results for {protein_id}")
+    print(f"Excluded {len(excluded)} bad docking results for {protein_id}")
     # Compute average Z-score per pocket
     avg_z = df_protein.groupby("PocketID")["ZScore"].mean().reset_index(name="AvgZScore")
     #avg_z["Pocket"] = avg_z["PocketID"].astype(str)
@@ -127,7 +127,7 @@ def calculate_composite_score(protein_id: str, master_df: pd.DataFrame) -> tuple
     df_protein = master_df[master_df["ProteinID"] == protein_id]
 
     if df_protein.empty:
-        print(f"⚠️ No docking data for protein {protein_id}")
+        print(f"No docking data for protein {protein_id}")
         return None, None, None, None
     df_protein["Ligand"] = df_protein["Ligand"].apply(lambda x: x.split("_prepared_")[1])
     # === 2. Prepare tables ===
@@ -139,7 +139,7 @@ def calculate_composite_score(protein_id: str, master_df: pd.DataFrame) -> tuple
         columns={"Ligand": "LigandID", "PocketID": "Pocket", "DockingScore": "BestScore"}
     )
 
-    # 🔥 Use Corrected_PLIP_contacts here instead of old PLIP_contacts
+    # Use Corrected_PLIP_contacts here instead of old PLIP_contacts
     plip_counts = df_protein[["Ligand", "PocketID", "Corrected_PLIP_contacts"]].rename(
         columns={"Ligand": "LigandID", "PocketID": "Pocket", "Corrected_PLIP_contacts": "PLIPcnt"}
     )
@@ -238,7 +238,7 @@ def collect_raw_files(gene_ids=None):
         if pdb_file.exists():
             shutil.copy(pdb_file, raw_out_dir / f"{gene_id}_relaxed.pdb")
 
-    print(f"\n📦 All raw datasets collected under {raw_out_dir}")
+    print(f"\n All raw datasets collected under {raw_out_dir}")
 
 
 
@@ -276,7 +276,7 @@ def gen_master_dataset():
         ligand = row['Ligand']
         docking_score = row['Best Score (kcal/mol)'] if 'Best Score (kcal/mol)' in row else row['DockingScore']
 
-        # --- Load PocketPrediction for this protein ---
+        # Load PocketPrediction for this protein
         pocket_pred_file = RAW_DIR / f"{protein_id}_PocketPredictions.csv"
         if pocket_pred_file.exists():
             pocket_df = pd.read_csv(pocket_pred_file)
@@ -286,11 +286,11 @@ def gen_master_dataset():
         else:
             pocket_df = pd.DataFrame()
 
-        # --- Merge pocket information ---
+        # Merge pocket information
         pocket_info = pocket_df[pocket_df['PocketID'] == pocket_id].iloc[0] if not pocket_df.empty and pocket_id in \
                                                                                pocket_df['PocketID'].values else {}
 
-        # === Use FullPlipData for PLIP information ===
+        # Use FullPlipData for PLIP information
         ligand_clean = ligand.replace(f"{protein_id}_prepared_", "")
 
         plip_subset = full_plip_df[
@@ -306,7 +306,7 @@ def gen_master_dataset():
             plip_contact_count = 0
             plip_interaction_types = ""
 
-        # === Inject real grid size ===
+        # Inject real grid size
         grid_row = config_df[
             (config_df["ProteinID"] == protein_id) &
             (config_df["LigandID"] == ligand_clean) &
@@ -318,7 +318,7 @@ def gen_master_dataset():
         else:
             grid_edge = None
 
-        # --- New: Compute ABCadj based on TMD and NBD residue proximity ---
+        # New: Compute ABCadj based on TMD and NBD residue proximity
         abc_adj = 0.0
         domain = 'NA'
         pdb_file = BASE_DOCK_PATH / protein_id / "protein" / f"{protein_id}_relaxed.pdb"
@@ -383,7 +383,7 @@ def gen_master_dataset():
     master_df.to_csv(OUT_BASE / "MasterDockingDataset.csv", index=False)
 
     print(
-        "✅ MasterDockingDataset.csv created successfully with corrected PLIP contacts, GridEdgeLength, TMDdistance, and TMDclass!")
+        "MasterDockingDataset.csv created successfully with corrected PLIP contacts, GridEdgeLength, TMDdistance, and TMDclass!")
 
 
 def build_full_plip_records(raw_dir: str, output_path: str):
@@ -445,7 +445,7 @@ def build_full_plip_records(raw_dir: str, output_path: str):
 
     full_df = pd.DataFrame(all_records)
     full_df.to_csv(output_path, index=False)
-    print(f"✅ Full raw PLIP interaction table saved to: {output_path}")
+    print(f"Full raw PLIP interaction table saved to: {output_path}")
 
     return full_df
 
@@ -551,7 +551,7 @@ def main():
     #         all_pockets_for_md.append(top_pockets)
     #
     #     except Exception as e:
-    #         print(f"⚠️ Skipped {protein_id}: {e}")
+    #         print(f"Skipped {protein_id}: {e}")
     #         continue
     #
     # # Save all combined pocket scores
@@ -585,7 +585,7 @@ def main():
     #
     # merged_sorted.to_csv(out_dir / "Top5PocketsWithLigands.csv", index=False)
 
-    print(f"\n🎉 All composite score results sorted and saved under {out_dir}")
+    print(f"\n All composite score results sorted and saved under {out_dir}")
 
 
 if __name__ == "__main__":
