@@ -15,7 +15,7 @@ def run_plip_on_protein(protein_id, base_root):
             complex_path = os.path.join(base_path, filename)
             complex_name = filename.replace("_complex.pdb", "")
 
-            print(f"🔬 Processing: {complex_path}/{filename}")
+            print(f"Processing: {complex_path}/{filename}")
             complex = PDBComplex()
             complex.load_pdb(complex_path)
             complex.analyze()
@@ -74,4 +74,5 @@ base_path = os.path.join(project_root, "dataset/protein_db/docking")
 for protein_id in protein_list:
     run_plip_on_protein(protein_id, base_path)
 
-print("🎉 All PLIP analyses completed.")
+print("All PLIP analyses completed.")
+

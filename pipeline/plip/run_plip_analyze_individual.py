@@ -73,4 +73,4 @@ for filename in pdb_files:
 # Write summary file
 summary_df = pd.DataFrame(summary_data, columns=["Complex", "Type", "Residue", "Distance", "Details"])
 summary_df.to_csv(os.path.join(output_dir, "all_plip_interactions_summary.csv"), index=False)
-print("🎉 PLIP profiling completed for:", protein_folder)
+print("PLIP profiling completed for:", protein_folder)
