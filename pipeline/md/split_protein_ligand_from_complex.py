@@ -44,11 +44,11 @@ def align_full_ligand_to_pose(
                              and l[17:20].strip() == resname
         ]
     if not lig_lines:
-        raise ValueError("❌ No ligand atoms found in complex")
+        raise ValueError("No ligand atoms found in complex")
 
     pdb_block = "MODEL\n" + "".join(lig_lines) + "ENDMDL\n"
     pose = Chem.MolFromPDBBlock(pdb_block, sanitize=True, removeHs=True)
-    print(f"📌 Extracted {pose.GetNumAtoms()} atoms from docked pose")
+    print(f"Extracted {pose.GetNumAtoms()} atoms from docked pose")
 
     # --- Step 2: Regenerate full ligand from correct SMILES ---
     smiles = Chem.MolToSmiles(pose, isomericSmiles=True)

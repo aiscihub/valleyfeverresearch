@@ -28,7 +28,7 @@ DOMAIN_MAP = {
 def load_domain_annotations(domain_csv_path):
     """Load InterProScan domain annotations."""
     if not os.path.exists(domain_csv_path):
-        raise FileNotFoundError(f"❌ Domain CSV not found: {domain_csv_path}")
+        raise FileNotFoundError(f"Domain CSV not found: {domain_csv_path}")
     df = pd.read_csv(domain_csv_path)
     df["Start"] = df["Start"].astype(int)
     df["End"] = df["End"].astype(int)
@@ -54,10 +54,10 @@ def compute_domain_plddt(df_domains, gene_to_pdb, pdb_folder):
     for gene_id, pdb_file in gene_to_pdb.items():
         pdb_path = os.path.join(pdb_folder, pdb_file)
         if not os.path.exists(pdb_path):
-            print(f"⚠️ Skipping missing PDB: {pdb_path}")
+            print(f"Skipping missing PDB: {pdb_path}")
             continue
 
-        print(f"📦 Processing {gene_id}")
+        print(f"Processing {gene_id}")
         plddt_array = extract_plddt(pdb_path)
         gene_domains = df_domains[df_domains["Gene_ID"] == gene_id]
 
@@ -108,10 +108,10 @@ def merge_overlapping_ranges(domain_string):
 def save_csv(df, output_path):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     df.to_csv(output_path, index=False)
-    print(f"✅ Saved: {output_path}")
+    print(f"Saved: {output_path}")
 
 def main(domain_csv_path, pdb_dir, output_dir):
-    print("🚀 Starting domain-level pLDDT processing...")
+    print("Starting domain-level pLDDT processing...")
 
     # Step 1: Load domain data
     df_domains = load_domain_annotations(domain_csv_path)
@@ -162,7 +162,7 @@ def main(domain_csv_path, pdb_dir, output_dir):
 
     save_csv(df_summary, os.path.join(output_dir, "core_domains_plddt_table.csv"))
 
-    print("🎯 Completed domain-level pLDDT processing.")
+    print("Completed domain-level pLDDT processing.")
 
 if __name__ == "__main__":
     # Example usage (paths can be passed differently if turned into CLI later)

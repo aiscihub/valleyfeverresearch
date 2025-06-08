@@ -51,4 +51,4 @@ os.makedirs(os.path.dirname(output_script), exist_ok=True)
 with open(output_script, "w") as f:
     f.write(pml_script)
 
-print(f"✅ PyMOL script generated at: {output_script}")
+print(f"PyMOL script generated at: {output_script}")

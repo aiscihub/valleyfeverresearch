@@ -46,7 +46,7 @@ def run_batch_drift_analysis_from_pdbs(base_root_dir, protein, pocket_id):
                 final_pdb = os.path.join(replica_path, f"{prefix}_explicit_stripped_final_frame.pdb")
 
                 if not os.path.exists(final_pdb):
-                    print(f"⚠️ Missing final frame for {prefix}")
+                    print(f"Missing final frame for {prefix}")
                     continue
 
                 try:
@@ -70,13 +70,13 @@ def run_batch_drift_analysis_from_pdbs(base_root_dir, protein, pocket_id):
                         'ligand_atoms': ligand_atoms
                     })
                 except Exception as e:
-                    print(f"❌ Failed {prefix}: {str(e)}")
+                    print(f"Failed {prefix}: {str(e)}")
                     continue
 
     df = pd.DataFrame(all_results)
     out_path = os.path.join(pocket_dir, f"{protein}_drift_summary_from_pdb.csv")
     df.to_csv(out_path, index=False)
-    print(f"✅ Drift summary written to {out_path}")
+    print(f"Drift summary written to {out_path}")
 
 # Example usage:
 run_batch_drift_analysis_from_pdbs(

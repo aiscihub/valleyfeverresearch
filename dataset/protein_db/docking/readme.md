@@ -54,7 +54,7 @@ obabel verapamil.sdf -O verapamil_3d.pdb --gen3d
 -o verapamil.pdbqt
 ```
 
-⚠️ If you see errors like:
+If you see errors like:
 ```
 Sorry, there are no Gasteiger parameters available for atom UNL1:O
 ```

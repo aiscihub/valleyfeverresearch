@@ -106,5 +106,5 @@ def compute_abc_adjustment(protein_id, pocket_info, pdb_file_path, interpro_df):
         return abc_adj
 
     except Exception as e:
-        print(f"⚠️ Failed to compute domain adjustment for {protein_id}: {e}")
+        print(f"Failed to compute domain adjustment for {protein_id}: {e}")
         return 0.0

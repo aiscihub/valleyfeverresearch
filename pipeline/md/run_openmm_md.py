@@ -22,7 +22,7 @@ from openmm import MonteCarloBarostat
 # Wrapper function
 def run_multiple_replicas(parent_dir, base_dir, sdf_filename, pdb_filename, n_steps=50000, n_replicas=3):
     for i in range(1, n_replicas+1):
-        print(f"🚀 Running Replica {i}...")
+        print(f"Running Replica {i}...")
 
         # Create a new subfolder for each replica (optional but nice)
         replica_base_dir = os.path.join(base_dir, f"replica_{i}")
@@ -66,7 +66,7 @@ def save_frame_pdb(dcd_path, pdb_path, output_path, keep_ligand=True, frame_inde
 
     stripped = traj.atom_slice(selection)
     stripped[frame_index].save_pdb(output_path)
-    print(f"✅ Saved frame {frame_index} to {output_path}")
+    print(f"Saved frame {frame_index} to {output_path}")
 
 
 def run_explicit_protein_ligand_md_v2(
