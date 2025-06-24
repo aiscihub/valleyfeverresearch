@@ -92,7 +92,7 @@ If you use this pipeline, please cite:
 @article{your2025paper,
   title={A Structure-Guided Computational Pipeline for Characterizing ABC Transporters in \textit{Coccidioides immitis}},
   author={Your Name et al.},
-  journal={IEEE JBHI Special Issue - (submitted)},
+  journal={IEEE BHI conference - (submitted)},
   year={2025} 
 }
 ```
