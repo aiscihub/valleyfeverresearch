@@ -1,10 +1,6 @@
 # ABC Transporter Resistance Pipeline for Valley fever
 
-This repository implements the **computational pipeline** described in our paper:
-
-> **A Structure-Guided Computational Pipeline for Characterizing ABC Transporters in _Coccidioides immitis_**
-
-This framework integrates protein structure modeling, ligand docking, interaction profiling, and scoring to prioritize 
+This repository implements a **computational pipeline** integrating protein structure modeling, ligand docking, interaction profiling, and scoring to prioritize 
 druggable binding pockets that may mediate antifungal resistance.
 
 ---
