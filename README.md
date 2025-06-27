@@ -85,17 +85,7 @@ python pipeline/md/run_openmm_md.py \
 
 ---
 
-##  Citation
-If you use this pipeline, please cite:
 
-```bibtex
-@article{your2025paper,
-  title={A Structure-Guided Computational Pipeline for Characterizing ABC Transporters in \textit{Coccidioides immitis}},
-  author={Your Name et al.},
-  journal={IEEE BHI conference - (submitted)},
-  year={2025} 
-}
-```
 
 ---
 
