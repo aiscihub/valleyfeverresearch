@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CIMG_00533 Protein Viewer | Valley Fever Research</title>
+    <script src="https://unpkg.com/molstar/build/viewer/molstar.js"></script>
+    <style>
+        html, body { margin: 0; padding: 0; height: 100%; }
+        #app { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    const viewer = new MolStar.Viewer('app', {
+      layoutIsExpanded: true,
+      layoutShowControls: true,
+      showImportControls: false,
+      showSessionControls: false,
+      showStructureSourceControls: false
+    });
+
+    // Load AlphaFold protein
+    viewer.loadStructureFromUrl('CIMG_00533_relaxed.pdb', 'pdb', {
+      representationParams: {
+        type: 'cartoon',
+        color: 'model-index'
+      },
+      name: 'CIMG_00533 (AlphaFold)'
+    });
+
+    // Optional: Load ligand-bound complex
+    viewer.loadStructureFromUrl('CIMG_00533_prepared_Milbemycin_pocket3_complex', 'pdb', {
+      name: 'Milbemycin Complex',
+      representationParams: {
+        type: 'ball-and-stick',
+        color: 'element-symbol'
+      }
+    });
+
+    // Optional: Add pocket center sphere (e.g., pocket 5)
+    viewer.plugin.builders.shape.fromPositionSphere({
+      label: 'Pocket 5 Center',
+      position: { x: 42.3, y: 128.6, z: 97.1 }, // Replace with your pocket coords
+      radius: 2.0,
+      color: 0xff0000,
+      name: 'Pocket5Sphere'
+    });
+</script>
+</body>
+</html>
