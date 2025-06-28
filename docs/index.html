@@ -2,26 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Protein Viewer - CIMG_00533</title>
-    <script src="https://unpkg.com/molstar@3.0.0/build/viewer/molstar.js"></script>
+    <title>ABC Transporter Viewer Instructions</title>
     <style>
-        html, body { margin: 0; height: 100%; width: 100%; }
-        #viewer { height: 100vh; width: 100vw; }
+        body {
+          font-family: sans-serif;
+          text-align: center;
+          margin: 4em auto;
+          max-width: 600px;
+        }
+        a.button {
+          display: inline-block;
+          margin: 1em;
+          padding: 0.8em 1.5em;
+          background: #0077cc;
+          color: white;
+          text-decoration: none;
+          border-radius: 6px;
+        }
+        ol {
+          text-align: left;
+        }
     </style>
 </head>
 <body>
-<div id="viewer"></div>
-<script>
-    const viewer = new MolStar.Viewer('viewer', {
-      layoutIsExpanded: true,
-      layoutShowControls: true,
-      showImportControls: false
-    });
 
-    viewer.loadStructureFromUrl('./CIMG_00533.pdb', 'pdb', {
-      isBinary: false,
-      label: 'CIMG_00533'
-    });
-</script>
+<h1>View CIMG_00533 in Mol*</h1>
+
+<a class="button"
+   href="https://raw.githubusercontent.com/aiscihub/valleyfeverresearch/main/docs/cleaned_CIMG_00533.pdb"
+   download target="_blank">
+    🔽 Download PDB File
+</a>
+
+<a class="button"
+   href="https://molstar.org/viewer"
+   target="_blank">
+    🔬 Open Mol* Viewer
+</a>
+
+<p><strong>Instructions:</strong></p>
+<ol>
+    <li>Click "Download PDB File" to save the structure</li>
+    <li>Click "Open Mol* Viewer" to launch the interactive viewer</li>
+    <li>Drag the downloaded `.pdb` file into the Mol* viewer</li>
+</ol>
+
 </body>
 </html>
