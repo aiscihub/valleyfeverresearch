@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Protein Demo – CIMG_00533</title>
+    <script src="https://cdn.jsdelivr.net/npm/ngl@2.0.0-dev.39/dist/ngl.js"></script>
+    <style>
+        body {
+          font-family: sans-serif;
+          margin: 2em;
+          background-color: #f5f5f5;
+        }
+        h2 {
+          margin-top: 0;
+        }
+        #viewer-container {
+          display: flex;
+          gap: 2em;
+          align-items: flex-start;
+        }
+        #viewport {
+          width: 600px;
+          height: 500px;
+          border: 1px solid #ccc;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #description {
+          max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>ABC Transporter CIMG_00533</h2>
+<p>This structure was predicted using AlphaFold2 and colored by residue index. Below is an interactive viewer you can explore.</p>
+
+<div id="viewer-container">
+    <div id="viewport"></div>
+    <div id="description">
+        <p><strong>Source:</strong> <code>cleaned_CIMG_00533.pdb</code></p>
+        <p><strong>Color:</strong> Rainbow by residue index</p>
+        <p><strong>Representation:</strong> Cartoon</p>
+        <p>You can rotate, zoom, and pan the structure. Click and drag to explore the 3D conformation of the transporter.</p>
+    </div>
+</div>
+
+<script>
+    const stage = new NGL.Stage("viewport", { backgroundColor: "white" });
+
+    stage.setParameters({ cameraType: "perspective", quality: "medium" });
+
+    stage.loadFile("cleaned_CIMG_00533.pdb").then(function (comp) {
+      comp.addRepresentation("cartoon", {
+        colorScheme: "residueindex",
+        smoothSheet: true,
+        radiusScale: 0.7
+      });
+      comp.autoView();
+    });
+</script>
+
+</body>
+</html>

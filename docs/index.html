@@ -1,51 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ABC Transporter Viewer Instructions</title>
+    <meta charset="UTF-8" />
+    <title>Valley Fever Research - ABC Transporter Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/ngl@2.0.0-dev.39/dist/ngl.js"></script>
     <style>
         body {
           font-family: sans-serif;
-          text-align: center;
-          margin: 4em auto;
-          max-width: 600px;
+          margin: 2em;
+          background: #f4f4f4;
         }
-        a.button {
-          display: inline-block;
-          margin: 1em;
-          padding: 0.8em 1.5em;
-          background: #0077cc;
-          color: white;
-          text-decoration: none;
-          border-radius: 6px;
+
+        h1 {
+          margin-bottom: 0.5em;
         }
-        ol {
-          text-align: left;
+
+        .viewer-section {
+          display: flex;
+          gap: 2em;
+          align-items: flex-start;
+          margin-top: 2em;
+        }
+
+        #viewport {
+          width: 600px;
+          height: 500px;
+          border: 1px solid #ccc;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .description {
+          max-width: 400px;
+        }
+
+        .footer {
+          margin-top: 3em;
+          font-size: 0.9em;
+          color: #666;
         }
     </style>
 </head>
 <body>
 
-<h1>View CIMG_00533 in Mol*</h1>
+<h1>Valley Fever Drug Resistance Research</h1>
+<p>
+    We are modeling ABC transporters in <i>Coccidioides immitis</i> to understand antifungal resistance.
+    Below is an interactive 3D viewer of transporter CIMG_00533.
+</p>
 
-<a class="button"
-   href="https://raw.githubusercontent.com/aiscihub/valleyfeverresearch/main/docs/cleaned_CIMG_00533.pdb"
-   download target="_blank">
-    🔽 Download PDB File
-</a>
+<div class="viewer-section">
+    <div id="viewport"></div>
+    <div class="description">
+        <h3>About this protein</h3>
+        <p><strong>ID:</strong> CIMG_00533</p>
+        <p><strong>Method:</strong> AlphaFold2 prediction</p>
+        <p><strong>Color:</strong> Rainbow (residue index)</p>
+        <p><strong>Representation:</strong> Cartoon</p>
+        <p>You can zoom, rotate, and explore structural features related to drug efflux.</p>
+    </div>
+</div>
 
-<a class="button"
-   href="https://molstar.org/viewer"
-   target="_blank">
-    🔬 Open Mol* Viewer
-</a>
+<div class="footer">
+    View on GitHub: <a href="https://github.com/aiscihub/valleyfeverresearch" target="_blank">aiscihub/valleyfeverresearch</a>
+</div>
 
-<p><strong>Instructions:</strong></p>
-<ol>
-    <li>Click "Download PDB File" to save the structure</li>
-    <li>Click "Open Mol* Viewer" to launch the interactive viewer</li>
-    <li>Drag the downloaded `.pdb` file into the Mol* viewer</li>
-</ol>
+<script>
+    const stage = new NGL.Stage("viewport", {
+      backgroundColor: "white"
+    });
+
+    stage.setParameters({ cameraType: "perspective", quality: "medium" });
+
+    stage.loadFile("cleaned_CIMG_00533.pdb").then(function (comp) {
+      comp.addRepresentation("cartoon", {
+        colorScheme: "residueindex",
+        smoothSheet: true,
+        radiusScale: 0.7
+      });
+      comp.autoView();
+    });
+
+    window.addEventListener("resize", () => stage.handleResize());
+</script>
 
 </body>
 </html>
