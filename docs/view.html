@@ -26,36 +26,68 @@
         }
         #description {
           max-width: 400px;
+          max-height: 500px;
+          overflow-y: auto;
         }
     </style>
 </head>
 <body>
 
-<h2>ABC Transporter CIMG_00533</h2>
-<p>This structure was predicted using AlphaFold2 and colored by residue index. Below is an interactive viewer you can explore.</p>
+<h2>ABC Transporter Viewer</h2>
+<p>Select a protein below to visualize its 3D structure. Colored by residue index.</p>
 
 <div id="viewer-container">
     <div id="viewport"></div>
     <div id="description">
-        <p><strong>Source:</strong> <code>cleaned_CIMG_00533.pdb</code></p>
+        <p>
+            <label for="proteinSelect"><strong>Choose Protein:</strong></label>
+            <select id="proteinSelect" onchange="loadProtein(this.value)">
+                <option value="CIMG_00533" selected>CIMG_00533</option>
+                <option value="CIMG_09093">CIMG_09093</option>
+                <option value="CIMG_01418">CIMG_01418</option>
+            </select>
+        </p>
+
         <p><strong>Color:</strong> Rainbow by residue index</p>
         <p><strong>Representation:</strong> Cartoon</p>
         <p>You can rotate, zoom, and pan the structure. Click and drag to explore the 3D conformation of the transporter.</p>
+
+        <h3>Similar ABC Transporters</h3>
+        <ul>
+            <li>CIMG_09093 – PDR family, high TM helix similarity</li>
+            <li>CIMG_01418 – Strong structural alignment to CDR1</li>
+            <li>CDR4 (Candida albicans) – 55% identity, conserved motifs</li>
+            <li>CDR1 (Candida auris) – PDR-type, functional homolog</li>
+            <li>XP_001246762.2 – PDR subtype with overlapping pockets</li>
+        </ul>
     </div>
 </div>
 
 <script>
     const stage = new NGL.Stage("viewport", { backgroundColor: "white" });
 
-    stage.setParameters({ cameraType: "perspective", quality: "medium" });
+    const proteinMap = {
+        "CIMG_00533": "cleaned_CIMG_00533.pdb",
+        "CIMG_09093": "clean_CIMG_09093.pdb",
+        "CIMG_01418": "clean_CIMG_01418.pdb"
+    };
 
-    stage.loadFile("cleaned_CIMG_00533.pdb").then(function (comp) {
-      comp.addRepresentation("cartoon", {
-        colorScheme: "residueindex",
-        smoothSheet: true,
-        radiusScale: 0.7
-      });
-      comp.autoView();
+    function loadProtein(name) {
+        const path = proteinMap[name];
+        stage.removeAllComponents();
+        stage.loadFile(path).then(function (comp) {
+            comp.addRepresentation("cartoon", {
+                colorScheme: "residueindex",
+                smoothSheet: true,
+                radiusScale: 0.7
+            });
+            comp.autoView();
+        });
+    }
+
+    // Load default protein on page load
+    window.addEventListener("load", function () {
+        loadProtein("CIMG_00533");
     });
 </script>
 
