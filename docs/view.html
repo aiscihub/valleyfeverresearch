@@ -19,8 +19,13 @@
           align-items: flex-start;
         }
         #viewport {
-          width: 600px;
-          height: 500px;
+          width: 1200px;
+          height: 800px;
+          border: 1px solid #ccc;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+<!--          width: 100%;-->
+<!--          max-width: 900px;-->
+<!--          height: 600px;-->
           border: 1px solid #ccc;
           box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
@@ -68,8 +73,8 @@
 
     const proteinMap = {
         "CIMG_00533": "cleaned_CIMG_00533.pdb",
-        "CIMG_09093": "clean_CIMG_09093.pdb",
-        "CIMG_01418": "clean_CIMG_01418.pdb"
+        "CIMG_09093": "cleaned_CIMG_09093.pdb",
+        "CIMG_01418": "cleaned_CIMG_01418.pdb"
     };
 
     function loadProtein(name) {
