@@ -23,8 +23,8 @@
         }
 
         #viewport {
-          width: 600px;
-          height: 500px;
+          width: 1200px;
+          height: 800px;
           border: 1px solid #ccc;
           box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
@@ -45,43 +45,64 @@
 <h1>Valley Fever Drug Resistance Research</h1>
 <p>
     We are modeling ABC transporters in <i>Coccidioides immitis</i> to understand antifungal resistance.
-    Below is an interactive 3D viewer of transporter CIMG_00533.
+    Below is an interactive 3D viewer of transporters.
 </p>
 
-<div class="viewer-section">
+<div id="viewer-container">
     <div id="viewport"></div>
-    <div class="description">
-        <h3>About this protein</h3>
-        <p><strong>ID:</strong> CIMG_00533</p>
-        <p><strong>Method:</strong> AlphaFold2 prediction</p>
-        <p><strong>Color:</strong> Rainbow (residue index)</p>
+    <div id="description">
+        <p>
+            <label for="proteinSelect"><strong>Choose Protein:</strong></label>
+            <select id="proteinSelect" onchange="loadProtein(this.value)">
+                <option value="CIMG_00533" selected>CIMG_00533</option>
+                <option value="CIMG_09093">CIMG_09093</option>
+                <option value="CIMG_01418">CIMG_01418</option>
+            </select>
+        </p>
+
+        <p><strong>Color:</strong> Rainbow by residue index</p>
         <p><strong>Representation:</strong> Cartoon</p>
-        <p>You can zoom, rotate, and explore structural features related to drug efflux.</p>
+        <p>You can rotate, zoom, and pan the structure. Click and drag to explore the 3D conformation of the transporter.</p>
+
+        <h3>Similar ABC Transporters</h3>
+        <ul>
+            <li>CIMG_09093 – PDR family, high TM helix similarity</li>
+            <li>CIMG_01418 – Strong structural alignment to CDR1</li>
+            <li>CDR4 (Candida albicans) – 55% identity, conserved motifs</li>
+            <li>CDR1 (Candida auris) – PDR-type, functional homolog</li>
+            <li>XP_001246762.2 – PDR subtype with overlapping pockets</li>
+        </ul>
     </div>
 </div>
 
-<div class="footer">
-    View on GitHub: <a href="https://github.com/aiscihub/valleyfeverresearch" target="_blank">aiscihub/valleyfeverresearch</a>
-</div>
-
 <script>
-    const stage = new NGL.Stage("viewport", {
-      backgroundColor: "white"
+    const stage = new NGL.Stage("viewport", { backgroundColor: "white" });
+
+    const proteinMap = {
+        "CIMG_00533": "cleaned_CIMG_00533.pdb",
+        "CIMG_09093": "cleaned_CIMG_09093.pdb",
+        "CIMG_01418": "cleaned_CIMG_01418.pdb"
+    };
+
+    function loadProtein(name) {
+        const path = proteinMap[name];
+        stage.removeAllComponents();
+        stage.loadFile(path).then(function (comp) {
+            comp.addRepresentation("cartoon", {
+                colorScheme: "residueindex",
+                smoothSheet: true,
+                radiusScale: 0.7
+            });
+            comp.autoView();
+        });
+    }
+
+    // Load default protein on page load
+    window.addEventListener("load", function () {
+        loadProtein("CIMG_00533");
     });
-
-    stage.setParameters({ cameraType: "perspective", quality: "medium" });
-
-    stage.loadFile("cleaned_CIMG_00533.pdb").then(function (comp) {
-      comp.addRepresentation("cartoon", {
-        colorScheme: "residueindex",
-        smoothSheet: true,
-        radiusScale: 0.7
-      });
-      comp.autoView();
-    });
-
-    window.addEventListener("resize", () => stage.handleResize());
 </script>
 
 </body>
+
 </html>
