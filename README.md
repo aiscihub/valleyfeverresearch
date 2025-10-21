@@ -9,6 +9,8 @@ druggable binding pockets that may mediate antifungal resistance.
 
 [![Protein 3D Viewer](https://img.shields.io/badge/Protein_3D_Viewer-blue)](https://aiscihub.github.io/valleyfeverresearch/)
 
+[![Dataset Download](https://img.shields.io/badge/Dataset_Download-blue)](https://doi.org/10.5281/zenodo.16928731)
+
 ## Pipeline Overview
 
 ```text
